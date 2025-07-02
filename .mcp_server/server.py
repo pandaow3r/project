@@ -5,16 +5,8 @@ from app import dummyTool
 mcp = FastMCP("your-mcp-name")
 
 @mcp.tool()
-async def dummy_tool(param: str) -> str:
-    """
-    Definition of a tool here.
-    """
-    # Do some awsome processing here
-    awsome_response = dummyTool(param)
-    if not awsome_response:
-        return "No awsome response found."
-
-    return 
+async def weather_tool(location: str) -> str:
+    return getWeatherInfo(location)
 
 # Your another awsome tools can be added here
 # @mcp.tool()
@@ -28,3 +20,4 @@ async def dummy_tool(param: str) -> str:
 
 if __name__ == "__main__":
     mcp.run(transport="stdio")
+    
