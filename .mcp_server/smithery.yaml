@@ -1,2 +1,0 @@
-name: my-mcp-server
-entrypoint: python server.py 
